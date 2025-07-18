@@ -1,5 +1,8 @@
 {
   "projects": {
-    "default": "teak-catwalk-407506"
-  }
+    "default": "teak-catwalk-407506",
+    "staging": "teak-catwalk-407506"
+  },
+  "targets": {},
+  "etags": {}
 }

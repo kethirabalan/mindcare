@@ -18,7 +18,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "www",
+            "outputPath": {
+              "base": "www",
+              "browser": ""
+            },
             "index": "src/index.html",
             "polyfills": [
               "src/polyfills.ts"
@@ -32,17 +35,7 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss",
-            "node_modules/@ionic/angular/css/core.css",
-            "node_modules/@ionic/angular/css/normalize.css",
-            "node_modules/@ionic/angular/css/structure.css",
-            "node_modules/@ionic/angular/css/typography.css",
-            "node_modules/@ionic/angular/css/padding.css",
-            "node_modules/@ionic/angular/css/float-elements.css",
-            "node_modules/@ionic/angular/css/text-alignment.css",
-            "node_modules/@ionic/angular/css/text-transformation.css",
-            "node_modules/@ionic/angular/css/flex-utils.css",
-            "node_modules/@ionic/angular/css/display.css"],
+            "styles": ["src/global.scss", "src/theme/variables.scss"],
             "scripts": [],
             "browser": "src/main.ts"
           },
@@ -139,7 +132,7 @@
     "schematicCollections": [
       "@ionic/angular-toolkit"
     ],
-    "analytics": "69d525bc-85ef-4d06-9ebd-3a51eec8ef46"
+    "analytics": "dddfe516-de61-4d22-a1f6-b533dc715858"
   },
   "schematics": {
     "@ionic/angular-toolkit:component": {

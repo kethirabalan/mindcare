@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "mindsy",
     "public": "www",
     "ignore": [
       "firebase.json",
