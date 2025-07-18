@@ -33,4 +33,11 @@ router.get('/', authenticate, async (req: any, res: Response) => {
   }
 });
 
+// DELETE /api/moods/:id
+router.delete('/:id', authenticate, async (req: any, res: Response) => {
+  const { id } = req.params;
+  await Mood.findByIdAndDelete(id);
+  res.json({ message: 'Mood deleted' });
+});
+
 export default router;

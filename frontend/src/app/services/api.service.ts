@@ -18,6 +18,7 @@ export class ApiService {
   addMoodWithUserId(moodForm: { level: number; notes: string }, userId: string): Observable<any> {
     return this.http.post(`${environment.apiUrl}/api/moods`, {
       mood: moodForm.level,
+      note: moodForm.notes,
       userId
     }, {
       headers: {
@@ -37,5 +38,13 @@ export class ApiService {
 
   getMoods(): Observable<any[]> {
     return this.http.get<any[]>(`${environment.apiUrl}/api/moods`);
+  }
+
+  deleteMood(moodId: string): Observable<any> {
+    return this.http.delete(`${environment.apiUrl}/api/moods/${moodId}`, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('mindcare_jwt')}`
+      }
+    });
   }
 } 

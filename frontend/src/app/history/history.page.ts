@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { addIcons } from 'ionicons';
-import { arrowBackOutline } from 'ionicons/icons';
+import { arrowBackOutline, trashOutline } from 'ionicons/icons';
 
 @Component({
   selector: 'app-history',
@@ -27,6 +27,7 @@ export class HistoryPage implements OnInit {
   ) {
     addIcons({
       arrowBackOutline: arrowBackOutline,
+      trashOutline: trashOutline,
     });
   }
 
@@ -35,6 +36,7 @@ export class HistoryPage implements OnInit {
     this.api.getMyMoods().subscribe({
       next: async (data: any) => {
         this.moods = data;
+        console.log(this.moods);
         await this.dismissLoading();
       },
       error: async (err: any) => {
@@ -69,5 +71,16 @@ export class HistoryPage implements OnInit {
 
   goToDashboard() {
     this.router.navigate(['/dashboard']);
+  }
+
+  async deleteMood(moodId: string) {
+    await this.presentLoading();
+    await this.api.deleteMood(moodId).subscribe({
+      next: async () => {
+        await this.dismissLoading();
+        this.presentToast('Mood deleted!');
+        this.ngOnInit();
+      }
+    });
   }
 } 

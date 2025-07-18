@@ -16,9 +16,12 @@
     <ion-item *ngFor="let mood of moods" class="ion-margin-bottom" color="none">
       <ion-label>
         <h2>{{ mood.createdAt | date:'medium' }}</h2>
-        <p>Mood Level: <strong>{{ mood.level }}</strong></p>
-        <p *ngIf="mood.notes">Notes: {{ mood.notes }}</p>
+        <p>Mood Level: <strong>{{ mood.mood }}</strong></p>
+        <p *ngIf="mood.note">Notes: {{ mood.note }}</p>
       </ion-label>
+      <ion-button slot="end" color="danger" (click)="deleteMood(mood._id)">
+        <ion-icon name="trash-outline"></ion-icon>
+      </ion-button>
     </ion-item>
   </ion-list>
 </ion-content> 
