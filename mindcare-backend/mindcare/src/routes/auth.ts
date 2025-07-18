@@ -84,4 +84,34 @@ router.get('/user', authenticate, async (req: any, res: Response) => {
   }
 });
 
+router.post('/logout', authenticate, async (req: any, res: Response) => {
+  res.clearCookie('token');
+  res.json({ message: 'Logged out' });
+});
+
+router.post('/update-user', authenticate, async (req: any, res: Response) => {
+  const { name, email } = req.body;
+  const user = await User.findByIdAndUpdate(req.user.id, { name, email });
+  res.json({ message: 'User updated' });
+});
+
+router.post('/update-password', authenticate, async (req: any, res: Response) => {
+  const { oldPassword, newPassword } = req.body;
+  const user = await User.findById(req.user.id);
+  if (!user) return res.status(400).json({ message: 'User not found' });
+  const isMatch = await bcrypt.compare(oldPassword, user.password);
+  if (!isMatch) return res.status(400).json({ message: 'Invalid password' });
+  user.password = newPassword;
+  await user.save();
+  res.json({ message: 'Password updated' });
+}); 
+
+router.post('/forgot-password', async (req: Request, res: Response) => {
+  const { email } = req.body;
+  const user = await User.findOne({ email });
+  if (!user) return res.status(400).json({ message: 'User not found' });
+  const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET || 'secretkey', { expiresIn: '1h' });
+  res.json({ token });
+});
+
 export default router;
