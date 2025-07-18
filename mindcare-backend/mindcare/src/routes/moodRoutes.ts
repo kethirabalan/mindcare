@@ -40,4 +40,12 @@ router.delete('/:id', authenticate, async (req: any, res: Response) => {
   res.json({ message: 'Mood deleted' });
 });
 
+// PUT /api/moods/:id
+router.put('/:id', authenticate, async (req: any, res: Response) => {
+  const { id } = req.params;
+  const { mood, note } = req.body;
+  await Mood.findByIdAndUpdate(id, { mood, note });
+  res.json({ message: 'Mood updated' });
+});
+
 export default router;
