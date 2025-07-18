@@ -12,10 +12,6 @@ mindcare/
 ├── .gitignore
 └── README.md
 
-yaml
-Copy
-Edit
-
 ---
 
 ## 🚀 Getting Started
