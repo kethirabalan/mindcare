@@ -1,0 +1,31 @@
+<ion-header collapse="condense" mode="ios">
+  <ion-toolbar color="none">
+    <!-- <ion-title>MindCare Login</ion-title>s -->
+  </ion-toolbar>
+</ion-header>
+<ion-content mode="ios" [fullscreen]="true">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="ion-padding">
+      <div class="ion-no-padding ion-text-center">
+        <h1><b>Mindsy</b></h1>
+        <p>Login to your account</p>
+      </div>
+      <ion-card style="background-color: var(--ion-color-light);">
+        <ion-card-content>
+          <ion-item color="none">
+            <ion-label position="floating">Email</ion-label>
+            <ion-input type="email" formControlName="email"></ion-input>
+          </ion-item>
+          <ion-item color="none">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input type="password" formControlName="password"></ion-input>
+          </ion-item>
+          <ion-button expand="block" type="submit" [disabled]="loginForm.invalid" class="ion-margin-top">Login</ion-button>
+          <ion-item lines="none" color="none">
+            <ion-label>Don't have an account? <a href="/register" style="text-decoration: none;">Sign Up</a></ion-label>
+          </ion-item>
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </form>
+</ion-content> 

@@ -1,0 +1,33 @@
+# === .gitignore ===
+# Node
+**/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Dist/Build folders
+**/dist/
+**/build/
+**/out-tsc/
+
+# Ionic
+/.ionic/
+/www/
+/platforms/
+/plugins/
+
+# Angular
+.angular/
+.angular/cache/
+.sass-cache/
+coverage/
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# OS/System files
+.DS_Store
+Thumbs.db

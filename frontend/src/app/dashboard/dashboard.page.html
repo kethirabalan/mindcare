@@ -1,0 +1,22 @@
+<ion-header mode="ios">
+  <ion-toolbar color="none">
+    <ion-title>Mindsy</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="logout()" color="danger">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle class="ion-text-center ion-margin-top">Your mental wellness companion</ion-card-subtitle>
+      <ion-card-title class="ion-text-center" style="font-size: 24px; font-weight: 600;">Welcome to Mindsy!</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-button expand="block" color="primary" (click)="goToAddMood()" class="ion-margin-top">Add Mood</ion-button>
+      <ion-button expand="block" color="secondary" (click)="goToHistory()" class="ion-margin-top">View Mood History</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

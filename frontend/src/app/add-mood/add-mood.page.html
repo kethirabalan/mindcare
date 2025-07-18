@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar color="none">
+    <ion-title>Add Mood</ion-title>
+    <ion-buttons slot="start">
+      <ion-button (click)="goToDashboard()" color="primary">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content class="ion-padding">
+  <form [formGroup]="moodForm" (ngSubmit)="onSubmit()">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>How are you feeling?</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <ion-item color="none">
+          <ion-label position="floating">Mood Level (1-10)</ion-label>
+          <ion-input type="number" formControlName="level" min="1" max="10"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="moodForm.get('level')?.invalid && moodForm.get('level')?.touched" lines="none" color="none">
+          <ion-label>Mood level must be between 1 and 10.</ion-label>
+        </ion-item>
+        <ion-item color="none" class="ion-margin-bottom">
+          <ion-label position="floating">Notes (optional)</ion-label>
+          <ion-textarea formControlName="notes"></ion-textarea>
+        </ion-item>
+        <ion-button expand="block" type="submit" [disabled]="moodForm.invalid">Submit</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content> 

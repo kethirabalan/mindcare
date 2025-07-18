@@ -1,0 +1,42 @@
+<ion-content mode="ios"  [fullscreen]="true">
+  <ion-header mode="ios" collapse="condense">
+    <ion-toolbar color="none">
+      <!-- <ion-title>Mindsy Sign Up</ion-title> -->
+    </ion-toolbar>
+  </ion-header>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="ion-padding">
+      <div class="ion-no-padding ion-text-center">
+        <h1><b>Mindsy</b></h1>
+        <p>Create an account</p>
+      </div>
+    <ion-card style="background-color: var(--ion-color-light);">
+      <ion-card-content>
+        <ion-item color="none">
+          <ion-label position="floating">Name</ion-label>
+          <ion-input type="text" formControlName="name"></ion-input>
+        </ion-item>
+        <ion-item color="none">
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <ion-item color="none">
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" formControlName="password"></ion-input>
+        </ion-item>
+        <ion-item color="none">
+          <ion-label position="floating">Confirm Password</ion-label>
+          <ion-input type="password" formControlName="confirmPassword"></ion-input>
+        </ion-item>
+        <ion-item *ngIf="registerForm.errors?.['mismatch']" lines="none" color="none">
+          <ion-label color="danger">Passwords do not match.</ion-label>
+        </ion-item>
+        <ion-button expand="block" type="submit" [disabled]="registerForm.invalid" class="ion-margin-top">Sign Up</ion-button>
+        <ion-item lines="none" color="none">
+          <ion-label>Already have an account? <a href="/login" style="text-decoration: none;">Login</a></ion-label>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+    </div>
+  </form> 
+</ion-content> 
