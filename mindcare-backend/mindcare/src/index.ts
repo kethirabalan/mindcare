@@ -9,7 +9,10 @@ import journalRoutes from './routes/journalRoutes';
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'http://localhost:4200', // or ['http://localhost:4200']
+  credentials: true
+}));
 app.use(express.json());
 app.use('/api/moods', moodRoutes);
 app.use('/api/auth', authRoutes);
