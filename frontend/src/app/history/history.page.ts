@@ -36,7 +36,6 @@ export class HistoryPage implements OnInit {
     this.api.getMyMoods().subscribe({
       next: async (data: any) => {
         this.moods = data;
-        console.log(this.moods);
         await this.dismissLoading();
       },
       error: async (err: any) => {

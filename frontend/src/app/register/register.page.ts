@@ -65,8 +65,8 @@ export class RegisterPage {
     // Replace with actual API call
     setTimeout(async () => {
       await this.dismissLoading();
-      this.presentToast('Registration successful!', 'success');
       this.auth.register({ name: this.registerForm.value.name, email: this.registerForm.value.email, password: this.registerForm.value.password }).subscribe((res) => {
+        this.presentToast('Registration successful!', 'success');
         this.router.navigate(['/login']);
       });
     }, 1000);
