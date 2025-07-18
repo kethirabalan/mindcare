@@ -7,11 +7,11 @@ MindCare is a full-stack mental wellness application that allows users to track 
 <h3>📸 App Screenshots</h3>
 
 <div align="center">
-  <img src="src/assets/screenshots/login.png" alt="Login" width="150" style="margin: 8px;" />
-  <img src="src/assets/screenshots/home.png" alt="Home" width="150" style="margin: 8px;" />
-  <img src="src/assets/screenshots/add-mood.png" alt="add-mood" width="150" style="margin: 8px;" /><br>
-  <img src="src/assets/screenshots/signup.png" alt="signup" width="150" style="margin: 8px;" />
-  <img src="src/assets/screenshots/history.png" alt="history" width="150" style="margin: 8px;" />
+  <img src="src/assets/images/screenshots/login.png" alt="Login" width="150" style="margin: 8px;" />
+  <img src="src/assets/images/screenshots/home.png" alt="Home" width="150" style="margin: 8px;" />
+  <img src="src/assets/images/screenshots/add-mood.png" alt="add-mood" width="150" style="margin: 8px;" /><br>
+  <img src="src/assets/images/screenshots/signup.png" alt="signup" width="150" style="margin: 8px;" />
+  <img src="src/assets/images/screenshots/history.png" alt="history" width="150" style="margin: 8px;" />
 </div>
 
 ## 📁 Project Structure
