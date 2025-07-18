@@ -1,4 +1,6 @@
 # === .gitignore ===
+# Ignore Angular build output
+/frontend/www/
 # Node
 **/node_modules/
 npm-debug.log
